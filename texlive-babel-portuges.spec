@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-babel-portuges
 Version:	20131013
-Release:	5
+Release:	6
 Summary:	TeXLive babel-portuges package
 Group:		Publishing
 URL:		http://tug.org/texlive
