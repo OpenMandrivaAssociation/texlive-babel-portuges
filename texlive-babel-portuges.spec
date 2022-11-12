@@ -5,9 +5,9 @@ Summary:	TeXLive babel-portuges package
 Group:		Publishing
 URL:		http://tug.org/texlive
 License:	http://www.tug.org/texlive/LICENSE.TL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-portuges.r59883.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-portuges.doc.r59883.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-portuges.source.r59883.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-portuges.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-portuges.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-portuges.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
