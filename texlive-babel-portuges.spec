@@ -1,43 +1,26 @@
-Name:		texlive-babel-portuges
-Version:	59883
-Release:	2
-Summary:	TeXLive babel-portuges package
+%global tl_name babel-portuges
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.2u
+Release:	%{tl_revision}.1
+Summary:	Babel support for Portuges
 Group:		Publishing
-URL:		https://tug.org/texlive
-License:	http://www.tug.org/texlive/LICENSE.TL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-portuges.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-portuges.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-portuges.source.r%{version}.tar.xz
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/babel-contrib/portuges
+License:	lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-portuges.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-portuges.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-portuges.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-TeXLive babel-portuges package.
+The package provides the language definition file for support of
+Portuguese and Brazilian Portuguese in babel. Some shortcuts are
+defined, as well as translations to Portuguese of standard "LaTeX
+names".
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/generic/babel-portuges
-%doc %{_texmfdistdir}/doc/generic/babel-portuges
-#- source
-%doc %{_texmfdistdir}/source/generic/babel-portuges
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
